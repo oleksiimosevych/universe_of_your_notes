@@ -9,9 +9,11 @@
   .jumbotron
     .input-group
       = f.label :title, class: 'titles'
+      br
       = f.text_field :title, class: 'inputtitle'
     .input-group
       = f.label :content, class: 'titles'
+      br
       = f.text_area :content, class: 'textarea'
       /just deleted ids
   .actions = f.submit class: "btn"

@@ -12,12 +12,18 @@ h2 All your Notes
 	    	=link_to 'Delete', {:controller=>:posts,:action=>:destroy, :id=>post}, :method=>:delete, class: 'btn btn-default'
 	    	= link_to 'Create new one', new_post_path, class: 'btn btn-default'
 
-	    h1 = post.title
-	    p = post.content
+	    h3 = post.title
+	    h5 = post.content
 	    div
 	      b Created by:   
-	      b = link_to post.user.email, edit_user_registration_path, class: 'list-item' 
+	      b = link_to post.user.email, edit_user_registration_path, class: 'list-item'
+	    br
+		br
+	    = link_to 'Read the full note', post_path(post.id), class: 'btn btn-default'
+
+	    h6 Tags: here will be tags.
 	    		
 /we dont need that 250718 15 54
 /now we want to add attribute class
 = link_to 'New Note', new_post_path, class: 'btn btn-default'
+
