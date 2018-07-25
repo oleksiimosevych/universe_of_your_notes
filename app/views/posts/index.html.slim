@@ -1,11 +1,11 @@
-h1 Listing posts
-
-  @posts.each do |post|
-    h1=post.title
+h2 Listing posts
+/here must be - minus! 16 18
+- @posts.each do |post|
+    h1 = post.title
     p = post.content
     div
       b Author:
       = post.user.email
 
-/we dont need that 250718 16 54
+/we dont need that 250718 15 54
 = link_to 'New Post', new_post_path
