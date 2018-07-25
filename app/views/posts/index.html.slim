@@ -1,25 +1,11 @@
 h1 Listing posts
 
-table
-  thead
-    tr
-      th Title
-      th Content
-      th User
-      th
-      th
-      th
+  @posts.each do |post|
+    h1=post.title
+    p = post.content
+    div
+      b Author:
+      = post.user.email
 
-  tbody
-    - @posts.each do |post|
-      tr
-        td = post.title
-        td = post.content
-        td = post.user.email
-        td = link_to 'Show', post
-        td = link_to 'Edit', edit_post_path(post)
-        td = link_to 'Destroy', post, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
+/we dont need that 250718 16 54
 = link_to 'New Post', new_post_path
