@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+/*/ 25 07 18 14 43
+added and renamed to .scss file because we use sass
+"bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"*/
+@import "bootstrap-sprockets";
+@import "bootstrap";

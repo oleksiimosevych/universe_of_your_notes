@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog</title>
+    <title>Newblog</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,19 @@
   </head>
 
   <body>
-    <%= yield %>
+  	<!--https://getbootstrap.com/docs/3.3/components/#navbar
+	WE CREATE MENU HERE 25 07 18 14 37
+  	-->
+  	<nav class="navbar navbar-default">
+	  <div class="container">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="#">Brand</a>
+		    </div>
+		</div>
+	</nav>
+	<div class="container">
+    	<%= yield %>
+    </div>
   </body>
 </html>
