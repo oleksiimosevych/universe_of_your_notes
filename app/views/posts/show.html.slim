@@ -8,7 +8,8 @@ p
   = @post.content
 p
   strong User:
-  = @post.user_id
+  /just changed to mail we do not need any id to show 
+  = @post.user.email
 
 => link_to 'Edit', edit_post_path(@post)
 '|
