@@ -20,10 +20,25 @@
 		    </div>
 
         <ul class='nav navbar-nav navbar-right'>
- <!-- <button does not WORK for logged in users! )) -->
+ <!-- <button does not WORK for logged in users! 16 36 added destroy session 16 40 added helper user_signed_in? + 16 44 added 
+)) -->
+          <% if !user_signed_in? %>
           <li>
            <%= link_to "Sign up", new_user_registration_path %>  
           </li>
+          <li>
+           <%= link_to "Sign in", new_user_session_path %>  
+          </li>
+
+          <% else %>
+          <li>
+           <%= link_to "Edit user", edit_user_registration_path %>  
+          </li>
+          <li>
+           <%= link_to "Sign out", destroy_user_session_path, method:  :delete %>  
+          </li>
+          <% end %>
+
         </ul>
 		</div>
 	</nav>
