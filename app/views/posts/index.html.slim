@@ -1,11 +1,12 @@
 h2 Listing posts
 /here must be - minus! 16 18
 - @posts.each do |post|
-    h1 = post.title
-    p = post.content
-    div
-      b Author:
-      = post.user.email
+    .jumbotron
+	    h1 = post.title
+	    p = post.content
+	    div
+	      b Author:
+	      = post.user.email
 
 /we dont need that 250718 15 54
 /now we want to add attribute class
