@@ -10,6 +10,23 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    #let me find inside content something and insert something there or?
+    #@my_post_content= @post.content
+    def words
+
+      #strings = @post.content.split('\n')
+      
+      # strings.map(&:strip)
+       # @post.content.delete_if { |string| string.length == 0 }
+
+      #str.scan(/\S+/).flat_map{ |w| w.gsub(/^[^a-z]+|[^a-z]+$/i,'').split(//) }
+    end
+    # words
+    # h(@post.content).gsub(/\n/, '<br/>')
+    # @post.content = @post.content.gsub(/\n/, '<br>')
+    # @my_post_content = @post.content.split('<br>')#.html_safe
+    @my_post_content=@post.content.html_safe.to_s
+    @my_post_content=@my_post_content#.split('\n', 'ролр') 
   end
 
   # GET /posts/new

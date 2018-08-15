@@ -10,3 +10,27 @@
 .titles {width: 200px;}
 .inputtitle{width: 800px;}
 .textarea{width: 800px; height:500px;}
+
+.jumbotron_posts_show{
+	background-color: #eeeeee;
+
+	padding-left: 30px ;
+    padding-right: 30px ;
+    width: 40% ;
+    height: 450px ; 
+    float: left;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+.first-btn-link{
+	float:left;
+	clear:both;
+}
+.posts_list_content{
+	height: 150px;
+	display: inline-block;
+}
+
+.single_post_title, .single_post_content{
+	background-color: #eee;
+}

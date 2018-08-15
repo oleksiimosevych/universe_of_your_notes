@@ -1,10 +1,10 @@
 p#notice = notice
 .jumbotron
-	h1
+	.single_post_title
 	  strong 
 		  = @post.title
-	h2 
-	  = @post.content
+	.single_post_content 
+	  == @my_post_content
 	h6
 	  strong Created by: 
 	  /just changed to mail we do not need any id to show 

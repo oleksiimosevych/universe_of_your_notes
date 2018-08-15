@@ -1,11 +1,13 @@
 
 h2 All your Notes
-= link_to 'If you want to store some interesting information just CLICK ME!', new_post_path, class: 'btn btn-default'
-
+= link_to 'New Note', new_post_path, class: 'btn btn-default first-btn-link'
+br 
+br
 /here must be - minus! 16 18
 - @posts.each do |post|
-    .jumbotron
+    .jumbotron_posts_show
 	    br
+
 	    .btn-group
 	    	=link_to 'Edit', edit_post_path(post.id), class: 'btn btn-default'
 	    	/oh yes it is so good it is working. but we still need Alarm here
@@ -13,7 +15,9 @@ h2 All your Notes
 	    	= link_to 'Create new one', new_post_path, class: 'btn btn-default'
 
 	    h3 = post.title
-	    h5 = post.content
+	    h5
+	     .posts_list_content
+	    	 = truncate(post.content, :length => 400)
 	    div
 	      b Created by:   
 	      b = link_to post.user.email, edit_user_registration_path, class: 'list-item'
@@ -22,8 +26,3 @@ h2 All your Notes
 	    = link_to 'Read the full note', post_path(post.id), class: 'btn btn-default'
 
 	    h6 Tags: here will be tags.
-	    		
-/we dont need that 250718 15 54
-/now we want to add attribute class
-= link_to 'New Note', new_post_path, class: 'btn btn-default'
-
