@@ -16,7 +16,7 @@ h2 All your Notes
 	    h5 = post.content
 	    div
 	      b Created by:   
-	      b = link_to post.user.email, user_registration_path, class: 'list-item'
+	      b = link_to post.user.email, edit_user_registration_path, class: 'list-item'
 	    br
 		br
 	    = link_to 'Read the full note', post_path(post.id), class: 'btn btn-default'
