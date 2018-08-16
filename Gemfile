@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#text processor
+gem "wysiwyg-rails"
 #slim 25 07 18 13 50
 gem 'slim'
 gem "slim-rails"
