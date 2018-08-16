@@ -31,6 +31,19 @@
 	display: inline-block;
 }
 
-.single_post_title, .single_post_content{
-	background-color: #eee;
+.single_post_title, .single_post_title:hover , .single_post_content, .single_post_content:hover{
+	background-color: #eee !important;
+	color: black !important;
+
+}
+.single_post_title{
+    font-size: 200%;
+}
+a.list-item, a.list-item:hover, .post_title:hover{
+	background-color: #eee !important;	
+	color: black !important;
+}
+button {
+	color: #000 !important;
+	background-color: #eee !important 
 }

@@ -11,10 +11,10 @@ br
 	    .btn-group
 	    	=link_to 'Edit', edit_post_path(post.id), class: 'btn btn-default'
 	    	/oh yes it is so good it is working. but we still need Alarm here
-	    	=link_to 'Delete', {:controller=>:posts,:action=>:destroy, :id=>post}, :method=>:delete, class: 'btn btn-default'
+	    	=link_to 'Delete', {:controller=>:posts,:action=>:destroy, :id=>post}, :method=>:delete, data: {confirm: "Are you sure?"}, class: 'btn btn-default'
 	    	= link_to 'Create new one', new_post_path, class: 'btn btn-default'
 
-	    h3 = post.title
+	    h3 = link_to post.title, post_path(post.id), class: 'post_title'
 	    h5
 	     .posts_list_content
 	    	 = truncate(post.content, :length => 400)
