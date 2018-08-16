@@ -1,10 +1,12 @@
 p#notice = notice
 .jumbotron
+	.tags tAG1, Tag2. tag3....
+
 	.single_post_title
 	  strong 
 		  = @post.title
-	.single_post_content 
-	  == @my_post_content
+	.froala-editor 
+	  == simple_format(@post.content)
 	h6
 	  strong Created by: 
 	  /just changed to mail we do not need any id to show 
