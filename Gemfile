@@ -4,7 +4,8 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+#tags 20 08 18
+gem 'acts-as-taggable-on'
 #text processor
 gem "wysiwyg-rails"
 #slim 25 07 18 13 50
