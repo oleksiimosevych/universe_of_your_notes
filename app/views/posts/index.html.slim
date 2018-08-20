@@ -22,8 +22,7 @@ br
 	      b Created by:   
 	      b = link_to post.user.email, edit_user_registration_path, class: 'list-item'
 	    br
-	    h6 Tags: 
-	    	== render post.tags
-
-		br
+	    span.tags 
+	     = render post.tags
+	    br
 	    = link_to 'Read the full note', post_path(post.id), class: 'btn btn-default'

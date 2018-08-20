@@ -19,9 +19,14 @@
  @import "font-awesome-sprockets";
  @import "font-awesome";
  */
-/*taags will be:*/
+/*tags will be:*/
+span.tags{
+    margin: 2px;
+
+}
 span.tags a{
-	margin: 5px;
+	border-radius: 20px;
+    margin: 5px;
 	display: inline-block;
     padding: .25em .4em;
     font-size: 75%;
