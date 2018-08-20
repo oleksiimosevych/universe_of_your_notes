@@ -19,7 +19,21 @@
  @import "font-awesome-sprockets";
  @import "font-awesome";
  */
-
+/*taags will be:*/
+span.tags a{
+	margin: 5px;
+	display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #33b5e5!important;
+    color: #fff!important;
+    text-decoration: none;
+}
 
 /*/ 25 07 18 14 43
 added and renamed to .scss file because we use sass

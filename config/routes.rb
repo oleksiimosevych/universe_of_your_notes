@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :posts
   #resources :users
+  #we want to display tags
+  resources :tags, only: [:index, :show]
   
   devise_for :users
   root 'posts#index'
