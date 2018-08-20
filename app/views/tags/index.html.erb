@@ -1,2 +1,20 @@
-<h1>Tags</h1>
-<%= render @tags %>
+<script type="text/javascript">
+  window.onload = function() {
+    try {
+      TagCanvas.Start('myCanvas');
+    } catch(e) {
+      // something went wrong, hide the canvas container
+      document.getElementById('myCanvasContainer').style.display = 'none';
+    }
+  };
+ </script>
+
+<h1>Cloud of Tags</h1>
+<div id="myCanvasContainer">
+ <canvas class='canvas-tags' width="500px" height="500px" id="myCanvas">
+  <%= render @tags %>
+ </canvas>
+</div>
+<h2></h2>
+<br>
+
