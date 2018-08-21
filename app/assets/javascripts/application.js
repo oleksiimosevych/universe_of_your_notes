@@ -16,19 +16,19 @@
 
     var settings = {
     //height of sphere container
-    height: 700,
+    height: '900',
     //width of sphere container
-    width: 700,
+    width: '900',
     //radius of sphere
-    radius: 150,
+    radius: 200,
     //rotation speed
-    speed: 0.1,
+    speed: 1,
     //sphere rotations slower
     slower: 0.9,
     //delay between update position
     timer: 5,
     //dependence of a font size on axis Z
-    fontMultiplier: 15,
+    fontMultiplier: 25,
     //tag css stylies on mouse over
     hoverStyle: {
         border: 'none',
@@ -37,7 +37,7 @@
     //tag css stylies on mouse out
     mouseOutStyle: {
         border: '',
-        color: 'green'
+        color: ''
     }
     };
 

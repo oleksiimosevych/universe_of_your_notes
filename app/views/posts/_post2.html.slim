@@ -1,0 +1,14 @@
+.jumbotron
+	span.tags
+	  == render post.tags 
+	
+
+	.single_post_title
+	  strong 
+		  = link_to post.title, post_path(post.id)
+	.froala-editor 
+	  == simple_format(post.content)
+	h6
+	  strong Created by: 
+	  /just changed to mail we do not need any id to show 
+	  = post.user.email

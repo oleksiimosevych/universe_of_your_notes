@@ -20,6 +20,12 @@
  @import "font-awesome";
  */
 
+#all_posts_with_tag, #all_posts_with_tag > div > div.froala-editor > p{
+    font-size: 7px !important;
+    margin-bottom: 0px !important;
+    line-height: 7px !important;
+}
+
 /*for not registred*/
 .not-authorized{
     width: 100%;

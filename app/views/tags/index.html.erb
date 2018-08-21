@@ -1,3 +1,10 @@
+<div id="tagcloud">
+        <ul>
+            <%= render @tags %>
+            
+        </ul>
+</div>
+
     <style>
             /* Mother effin brute force CSS reset... */
             /* Always include after any other CSS */
@@ -12,55 +19,9 @@
         }
     </style>
 
-
-
-    <div id="tagcloud">
-        <ul>
-            <%= render @tags %>
-            
-        </ul>
-    </div>
 <script type="text/javascript">
     jQuery(document).ready(function(){
         $('#tagcloud').tagoSphere(settings);
     });
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- OLD -->
-<!-- <script type="text/javascript">
-  window.onload = function() {
-    try {
-      TagCanvas.Start('myCanva2s');
-    } catch(e) {
-      // something went wrong, hide the canvas container
-      document.getElementById('myCanvasContainer').style.display = 'none';
-    }
-  };
- </script>
- -->
-<!-- <h1>Cloud of Tags</h1>
-<div id="myCanva2sContainer">
- <canvas class='canvas-tags' width="500px" height="500px" id="myCanva2s">
-  
- </canvas>
-</div>
-<h2></h2>
-<br>
- -->
-
