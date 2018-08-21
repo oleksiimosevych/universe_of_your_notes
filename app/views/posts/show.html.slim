@@ -8,7 +8,7 @@ p#notice = notice
 	  strong 
 		  = @post.title
 	.froala-editor 
-	  == simple_format(@post.content)
+	  = simple_format(@post.content)
 	h6
 	  strong Created by: 
 	  /just changed to mail we do not need any id to show 
