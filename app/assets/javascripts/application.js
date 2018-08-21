@@ -13,35 +13,46 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
-$(function() {
-    // Define data source for At.JS.
-    var datasource = ["Jacob", "Isabella", "Ethan", "Emma", "Michael", "Olivia" ];
- 
-    // Build data to be used in At.JS config.
-    var names = $.map(datasource, function (value, i) {
-      return {
-        'id': i, 'name': value, 'email': value + "@email.com"
-      };
-    });
- 
-    // Define config for At.JS.
-    var config = {
-      at: "@",
-      data: names,
-      displayTpl: '<li>${name} <small>${email}</small></li>',
-      limit: 200
+
+    var settings = {
+    //height of sphere container
+    height: 700,
+    //width of sphere container
+    width: 700,
+    //radius of sphere
+    radius: 150,
+    //rotation speed
+    speed: 0.1,
+    //sphere rotations slower
+    slower: 0.9,
+    //delay between update position
+    timer: 5,
+    //dependence of a font size on axis Z
+    fontMultiplier: 15,
+    //tag css stylies on mouse over
+    hoverStyle: {
+        border: 'none',
+        color: '#0b2e6f'
+    },
+    //tag css stylies on mouse out
+    mouseOutStyle: {
+        border: '',
+        color: 'green'
     }
- 
-    // Initialize editor.
-    $('#froala-editor')
-      .on('froalaEditor.initialized', function (e, editor) {
-        editor.$el.atwho(config);
- 
-      	editor.events.on('keydown', function (e) {
-          if (e.which == $.FroalaEditor.KEYCODE.ENTER && editor.$el.atwho('isSelecting')) {
-            return false;
-          }
-        }, true);
-      })
-      .froalaEditor()
-  });
+    };
+
+
+
+// $(document).ready(function() {
+//    if( ! $('#myCanva2s').tagcanvas({
+//      textColour : '#000',
+//      outlineThickness : 2,
+//      maxSpeed : 0.13,
+//      depth : 0.85
+//    })) {
+//      // TagCanvas failed to load
+//      $('#myCanva2sContainer').hide();
+//    }
+//    // your other jQuery stuff here...
+//  });
+

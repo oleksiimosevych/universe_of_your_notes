@@ -5,7 +5,7 @@
 
 	.single_post_title
 	  strong 
-		  = post.title
+		  = link_to post.title, post_path(post.id)
 	.froala-editor 
 	  == simple_format(post.content)
 	h6
