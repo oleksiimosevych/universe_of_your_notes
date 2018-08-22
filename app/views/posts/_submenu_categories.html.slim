@@ -1,0 +1,7 @@
+ul
+  - posts.each do |post, children| 
+    li
+      = link_to_unless_current post.name, post
+      = render 'submenu_categories', pages: children if children.present? 
+    
+  end 

@@ -8,6 +8,13 @@
 
   .jumbotron
     .input-group
+
+      = f.label "Categories:", class: 'input'
+      br
+      = f.collection_select :parent_id, Category.order(:name), :id, :name, include_blank: true
+
+      /= f.text_field :tag_list, value: f.object.tag_list.to_s,  class: 'inputtitle'
+      <br>
       = f.label "Tags:", class: 'input'
       br
       = f.text_field :tag_list, value: f.object.tag_list.to_s,  class: 'inputtitle'
@@ -16,9 +23,9 @@
       br
       = f.text_field :title, class: 'inputtitle'
     .input-group
-      = f.label :content, class: 'titles'
-      br
-      = f.text_area :content, class: 'textarea'
+      /= f.label :content, class: 'titles'
+      /br
+      = f.text_area :content, class: 'textarea', placeholder: 'Add description (required)'
       /just deleted ids
 
   .actions = f.submit class: "btn"

@@ -1,0 +1,34 @@
+p#notice = notice
+  = content_for :title, @category.name
+  #menu
+  - Page.roots.each do |category|
+    li = link_to category.name, category, class: ("active" if @category.root == page)
+  end
+
+
+#submenu
+  = render 'submenu_categories', pages: @category.root.descendants.arrange
+
+
+#breadcrumbs
+  - @category.ancestors.each do |category| 
+    = link_to category.name, category
+  end
+
+h1 = @category.name
+
+= simple_format @category.content
+
+p
+  strong Name:
+  = @category.name
+p
+  strong Content:
+  = @category.content
+p
+  strong Ancestry:
+  = @category.ancestry
+
+=> link_to 'Edit', edit_category_path(@category)
+'|
+=< link_to 'Back', categories_path

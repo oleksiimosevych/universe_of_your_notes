@@ -6,6 +6,10 @@ git_source(:github) do |repo_name|
 end
 #tags 20 08 18
 gem 'acts-as-taggable-on'
+
+gem 'awesome_nested_set'
+
+gem 'ancestry'
 #text processor
 gem "wysiwyg-rails"
 #slim 25 07 18 13 50

@@ -3,4 +3,6 @@ class Post < ApplicationRecord
 	validates :content, presence: true 
 	validates :title, presence: true 
 	acts_as_taggable_on :tags
+	has_many :categories
+	has_ancestry
 end

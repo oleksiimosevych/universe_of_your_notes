@@ -1,0 +1,11 @@
+// Place all the styles related to the categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#category_parent_id, #post_parent_id, #post_tag_list{
+	text-align: center;
+	margin-left: 5px;
+	width: 800px;
+	height: 40px;
+	font-size: 20px;
+	border-radius: 20px;	
+}

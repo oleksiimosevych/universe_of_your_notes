@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   resources :posts
   #resources :users
   #we want to display tags
