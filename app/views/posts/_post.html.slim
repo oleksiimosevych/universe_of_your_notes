@@ -1,14 +1,15 @@
-.jumbotron
-	span.tags
-	  == render post.tags 
-	
-
-	.single_post_title
-	  strong 
-		  = link_to post.title, post_path(post.id)
-	.froala-editor 
-	  == simple_format(post.content)
-	h6
-	  strong Created by: 
-	  /just changed to mail we do not need any id to show 
-	  = post.user.email
+.jumbotron_posts_show
+    br
+    
+    h3 = link_to post.title, post_path(post.id), class: 'post_title'
+    h5
+     .posts_list_content
+    	 = truncate(post.content, :length => 400)
+    div
+      b Created by:   
+      b = link_to post.user.email, edit_user_registration_path, class: 'list-item'
+    br
+    span.tags 
+     = render post.tags
+    br
+    = link_to 'Read the full note', post_path(post.id), class: 'btn btn-default'
