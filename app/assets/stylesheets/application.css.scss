@@ -19,6 +19,35 @@
  @import "font-awesome-sprockets";
  @import "font-awesome";
  */
+.panel-body {padding: 10px !important;}
+
+.breadcrumbs a{color:white; }
+.breadcrumbs{
+    margin-left:5px;
+    border-radius: 20px;
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #33b5e5 !important;
+    color: #fff!important;
+    text-decoration: none;
+    float: left;
+    color: white;
+}
+
+
+ li {
+    list-style-type: none; /* no more dots */
+   }
+   ul {
+    margin-left: 0; /* distance left for IE and Opera */
+    padding-left: 0; /* distance left in Firefox, Safari, Chrome */
+   }
 
 #all_posts_with_tag, #all_posts_with_tag > div > div.froala-editor > p{
     
@@ -50,6 +79,7 @@
     margin: 2px;
 
 }
+
 .tags a, h1 > .tags{
 	border-radius: 20px;
     margin: 5px;

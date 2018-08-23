@@ -13,14 +13,15 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+   
 
     var settings = {
     //height of sphere container
-    height: '900',
+    height: '600',
     //width of sphere container
-    width: '900',
+    width: '1100',
     //radius of sphere
-    radius: 200,
+    radius: 250,
     //rotation speed
     speed: 1,
     //sphere rotations slower
@@ -28,7 +29,7 @@
     //delay between update position
     timer: 5,
     //dependence of a font size on axis Z
-    fontMultiplier: 25,
+    fontMultiplier: 20,
     //tag css stylies on mouse over
     hoverStyle: {
         border: 'none',
@@ -41,7 +42,8 @@
     }
     };
 
-
+$('#myCollapse').collapse();
+    
 
 // $(document).ready(function() {
 //    if( ! $('#myCanva2s').tagcanvas({
