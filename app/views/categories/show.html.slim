@@ -1,34 +1,32 @@
-p#notice = notice
-  = content_for :title, @category.name
-  #menu
-  - Page.roots.each do |category|
-    li = link_to category.name, category, class: ("active" if @category.root == page)
-  end
+.jumbotron  
+    p#notice = notice
+      = content_for :title, @category.name
+    ul#menu class="list-group"
+      div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"
+          div class="panel panel-primary"
+            div class="panel-heading" role="tab" id="heading1"
+              - Category.roots.each do |category|
+                h4 class="panel-title"
+                  a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1" 
+                  = link_to category.name, category, class: ("list-group-item active" if @category.root == category)
+              end
+                div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1" 
+                  = render 'submenu_categories', pages: @category.root.descendants.arrange
 
+      #breadcrumbs 
+        - @category.ancestors.each do |category| 
+          .breadcrumbs = link_to category.name, category
+        end
+        /= @category.name
+        /= simple_format @category.content
+        br
 
-#submenu
-  = render 'submenu_categories', pages: @category.root.descendants.arrange
+        h4 Category:
+        h4 = @category.name
+      p
+        strong Content:
+        = @category.content
 
-
-#breadcrumbs
-  - @category.ancestors.each do |category| 
-    = link_to category.name, category
-  end
-
-h1 = @category.name
-
-= simple_format @category.content
-
-p
-  strong Name:
-  = @category.name
-p
-  strong Content:
-  = @category.content
-p
-  strong Ancestry:
-  = @category.ancestry
-
-=> link_to 'Edit', edit_category_path(@category)
-'|
-=< link_to 'Back', categories_path
+      => link_to 'Edit', edit_category_path(@category)
+      '|
+      =< link_to 'Back', categories_path

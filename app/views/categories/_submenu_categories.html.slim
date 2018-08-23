@@ -1,7 +1,9 @@
-ul
-  - pages.each do |page, children| 
-    li
-      = link_to_unless_current page.name, page
-      = render 'submenu_categories', pages: children if children.present? 
-    
-  end 
+div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1"
+- pages.each do |page, children| 
+  li.tags 
+  	= link_to_unless_current page.name, page
+  li.tags
+    = render 'submenu_categories', pages: children if children.present?   
+end
+
+
