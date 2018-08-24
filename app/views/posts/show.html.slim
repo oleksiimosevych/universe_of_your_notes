@@ -8,22 +8,32 @@ p#notice = notice
 
 
 #submenu
-  /= render 'submenu_categories', posts: Category.post.root.descendants.arrange
+  = render 'submenu_categories', posts: @post.categories.arrange
 
   /= f.collection_select :parent_id, Category.order(:name), :id, :name, include_blank: true
 
 
-#breadcrumbs
-  - @post.ancestors.each do |post| 
-    = link_to post.name, post
-  end
+
 
 
 .jumbotron
+	/#breadcrumbs
+	  /- @post.ancestors.each do |post| 
+	   / = link_to post.name, post
+	  /end
+	span.tags2
+	  /== render @post.tags
+	  = @post.categories.map {|c| c.name}.join(', ') 
 	span.tags
-	  == render @post.tags 
-	span.tags
-	  = @post
+	  - @post.categories.each do |category|
+		li.tags = category.name
+	  end
+	  br
+	  p Categories present but not that what we need
+	 
+	  - Category.roots.each do |category|
+        span.tags3 = link_to category.name, category_path, class: ("active" if category.root == category)
+      end
 	
 
 	.single_post_title

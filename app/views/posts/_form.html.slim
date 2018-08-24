@@ -11,7 +11,15 @@
 
       = f.label "Categories:", class: 'input'
       br
-      = f.collection_select :parent_id, Category.order(:name), :id, :name, include_blank: true
+      /=f.collection_check_boxes :post, :category_ids, @categories, :id, :name 
+
+      = hidden_field_tag "post[category_ids][]", nil
+      - Category.all.each do |category|
+        = check_box_tag "post[category_ids][]", category.id, @post.category_ids.include?(category.id), id: dom_id(category)
+        = label_tag dom_id(category), category.name
+        br
+      end
+      /= f.association :categories, as: :select, include_blank: true
 
       /= f.text_field :tag_list, value: f.object.tag_list.to_s,  class: 'inputtitle'
       <br>

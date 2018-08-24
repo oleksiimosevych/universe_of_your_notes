@@ -8,6 +8,7 @@ table.jumbotron
   thead
     tr
       th Name
+      th Posts
       th Content
       th Ancestry
       th
@@ -18,6 +19,7 @@ table.jumbotron
     - @categories.each do |category|
       tr
         td = category.name
+        td = category.posts.map {|p| p.title}.join(', ')
         td = category.content
         td = category.ancestry
         td = link_to ' Show|', category

@@ -73,6 +73,6 @@ class CategoriesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     #we want to add new material in section permit do that what was prev ver of rails in model
     def category_params
-      params.require(:category).permit(:parent_id, :content, :name) 
+      params.require(:category).permit(:parent_id, :content, :name, :post_ids => []) 
     end
 end

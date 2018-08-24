@@ -34,6 +34,7 @@
 		      b = link_to post.user.email, edit_user_registration_path, class: 'list-item'
 		    br
 		    span.tags 
-		     = render post.tags
+		     /= render post.tags
+		     = post.categories.map {|c| c.name}.join(', ')
 		    br
 		    = link_to 'Read the full note', post_path(post.id), class: 'btn btn-default'

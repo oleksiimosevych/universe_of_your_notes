@@ -26,6 +26,9 @@
       p
         strong Content:
         = @category.content
+        br
+        strong Posts in category:
+        = @category.posts.map {|p| p.title}.join(', ')
 
       => link_to 'Edit', edit_category_path(@category)
       '|
