@@ -7,6 +7,8 @@ end
 #tags 20 08 18
 gem 'acts-as-taggable-on'
 
+gem 'pry-rails', group: [:development, :test]
+
 gem 'awesome_nested_set'
 
 gem 'ancestry'

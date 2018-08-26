@@ -1,40 +1,16 @@
 p#notice = notice
 
   = content_for :title, @post.name
-  #menu
-   - Category.roots.each do |post|
-    li = link_to post.name, post, class: ("active" if @post.root == page)
-   end
-
-
-#submenu
-  = render 'submenu_categories', posts: @post.categories.arrange
-
-  /= f.collection_select :parent_id, Category.order(:name), :id, :name, include_blank: true
-
-
-
-
-
+  
 .jumbotron
 	/#breadcrumbs
 	  /- @post.ancestors.each do |post| 
 	   / = link_to post.name, post
 	  /end
-	span.tags2
-	  /== render @post.tags
-	  = @post.categories.map {|c| c.name}.join(', ') 
 	span.tags
 	  - @post.categories.each do |category|
-		li.tags = category.name
+      	span.tags = link_to category.name, category
 	  end
-	  br
-	  p Categories present but not that what we need
-	 
-	  - Category.roots.each do |category|
-        span.tags3 = link_to category.name, category_path, class: ("active" if category.root == category)
-      end
-	
 
 	.single_post_title
 	  strong 

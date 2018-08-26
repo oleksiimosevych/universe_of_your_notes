@@ -28,7 +28,9 @@
         = @category.content
         br
         strong Posts in category:
-        = @category.posts.map {|p| p.title}.join(', ')
+        - @category.posts.each do |post|
+          li = link_to post.title, post 
+        end
 
       => link_to 'Edit', edit_category_path(@category)
       '|

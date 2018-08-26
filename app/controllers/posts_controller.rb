@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @my_post_content=@post.content
+    #binding.pry
     # @my_post_content=@my_post_content#.split('\n', 'ролр') 
   end
 
