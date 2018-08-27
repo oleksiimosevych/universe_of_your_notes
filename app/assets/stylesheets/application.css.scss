@@ -19,10 +19,19 @@
  @import "font-awesome-sprockets";
  @import "font-awesome";
  */
+
+/*span.categories_in_span {
+    margin: 5px;
+    padding: 3px;
+    background-color: #33b5e5;
+    border-radius: 20px;
+    font-size: 12px;
+}*/
+
 .panel-body {padding: 10px !important;}
 
 .breadcrumbs a{color:white; }
-.breadcrumbs{
+.breadcrumbs, span.categories_in_span {
     margin-left:5px;
     border-radius: 20px;
     display: inline-block;

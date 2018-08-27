@@ -1,6 +1,22 @@
 // Place all the styles related to the categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#heading1 a{
+	color: white;
+	text-decoration: none;
+}
+
+a{
+	text-decoration: none !important;
+}
+
+#accordion{
+	float: left;
+	/*margin-left: -100px !important;*/
+	padding: 20px !important;
+}
+
 #category_parent_id, #post_parent_id, #post_tag_list{
 	text-align: center;
 	margin-left: 5px;
@@ -10,13 +26,46 @@
 	border-radius: 20px;	
 }
 
-#submenu ul li a {
-	text-decoration: none !important;
-    margin: 5px !important;
-    padding: 0px !important;
+/*Global*/
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: helvetica, sans-serif;
+}
+
+/*Func*/
+
+.multi-level, .item ul, .nav input[type="checkbox"] {
+    display: none;
+}
+#menu:checked ~ .multi-level, .item input:checked ~ ul {
+    display: block;
+}
+
+div.submenu_class{
+	margin-left: 10px !important;
 }
 
 
 #heading1, #heading1 div li a{
 	
+}
+
+.current_category{
+	margin-left:5px;
+  border-radius: 5px;
+  display: inline-block;
+  /*padding: .25em .4em;*/
+  /*font-size: 75%;*/
+  font-weight: 800;
+  /*line-height: 1;*/
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #33b5e5 !important;
+  color: #fff!important;
+  text-decoration: none;
+  float: left;
+  color: white;
 }

@@ -23,9 +23,9 @@
     //radius of sphere
     radius: 250,
     //rotation speed
-    speed: 1,
+    speed: 0.2,
     //sphere rotations slower
-    slower: 0.9,
+    slower: 0.3,
     //delay between update position
     timer: 5,
     //dependence of a font size on axis Z

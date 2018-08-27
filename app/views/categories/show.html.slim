@@ -1,4 +1,4 @@
-.jumbotron  
+  
     p#notice = notice
       = content_for :title, @category.name
     ul#menu class="list-group"
@@ -7,12 +7,15 @@
             div class="panel-heading" role="tab" id="heading1"
               - Category.roots.each do |category|
                 h4 class="panel-title"
-                  a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1" 
-                  = link_to category.name, category, class: ("list-group-item active" if @category.root == category)
-              end
-                div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1" 
-                  = render 'submenu_categories', pages: @category.root.descendants.arrange
+                    a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1" 
+                    ul.link_to_category = link_to category.name, category, class: ("active" if @category.root == category)
 
+
+                    
+            end
+            ul.submenu_categories = render 'submenu_categories', pages: @category.root.descendants.arrange
+                
+    .jumbotron
       #breadcrumbs 
         - @category.ancestors.each do |category| 
           .breadcrumbs = link_to category.name, category
@@ -23,15 +26,16 @@
 
         h4 Category:
         h4 = @category.name
-      p
-        strong Content:
+        h4 Posts in category:
+        - @category.posts.each do |post|
+          h2 = link_to post.title, post
+          br 
+        end
+        br
+        p Description:
         = @category.content
         br
-        strong Posts in category:
-        - @category.posts.each do |post|
-          li = link_to post.title, post 
-        end
-
-      => link_to 'Edit', edit_category_path(@category)
+        
+      button.btn => link_to 'Edit', edit_category_path(@category)
       '|
-      =< link_to 'Back', categories_path
+      button.btn =< link_to 'Back', categories_path

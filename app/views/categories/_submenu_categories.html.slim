@@ -1,9 +1,8 @@
-div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1"
+div id="collapse1" class="panel-collapse collapse in" role="button" data-toggle="collapse"
 - pages.each do |page, children| 
-  li.tags 
+  div class= 'tags' id="collapse1" class="submenu_class panel-collapse collapse in" role="tabpanel" aria-labelledby="heading6" 
   	= link_to_unless_current page.name, page
-  li.tags
-    = render 'submenu_categories', pages: children if children.present?   
-end
+  	span.tags = page.posts.count 
+  	= render 'submenu_categories', pages: children if children.present?   
 
 
