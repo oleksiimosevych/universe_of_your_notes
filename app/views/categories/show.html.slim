@@ -1,41 +1,33 @@
-  
-    p#notice = notice
-      = content_for :title, @category.name
-    ul#menu class="list-group"
-      div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"
-          div class="panel panel-primary"
-            div class="panel-heading" role="tab" id="heading1"
-              - Category.roots.each do |category|
-                h4 class="panel-title"
-                    a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1" 
-                    ul.link_to_category = link_to category.name, category, class: ("active" if @category.root == category)
-
-
-                    
-            end
-            ul.submenu_categories = render 'submenu_categories', pages: @category.root.descendants.arrange
-                
-    .jumbotron
-      #breadcrumbs 
-        - @category.ancestors.each do |category| 
-          .breadcrumbs = link_to category.name, category
-        end
-        /= @category.name
-        /= simple_format @category.content
-        br
-
-        h4 Category:
-        h4 = @category.name
-        h4 Posts in category:
-        - @category.posts.each do |post|
-          h2 = link_to post.title, post
-          br 
-        end
-        br
-        p Description:
-        = @category.content
-        br
-        
-      button.btn => link_to 'Edit', edit_category_path(@category)
-      '|
-      button.btn =< link_to 'Back', categories_path
+  p#notice = notice
+    = content_for :title, @category.name
+  ul#menu class="list-group"
+    div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"
+      div class="panel panel-primary"
+        div class="panel-heading" role="tab" id="heading1"
+          - Category.roots.each do |category|
+            h4 class="panel-title"
+                a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1" 
+                ul.link_to_category = link_to category.name, category, class: ("active" if @category.root == category)                    
+          
+          ul.submenu_categories = render 'submenu_categories', pages: @category.root.descendants.arrange            
+  .jumbotron#box
+    br
+    #breadcrumbs 
+    - @category.ancestors.each do |category| 
+      .breadcrumbs = link_to category.name, category
+    end 
+    br
+    h4 Category:
+    h4 = @category.name
+    h4 Posts in category:
+    - @category.posts.each do |post|
+      h2 = link_to post.title, post
+      br 
+    end
+    br
+    p Description:
+    = @category.content
+    br
+  button.btn => link_to 'Edit', edit_category_path(@category)
+  '|
+  button.btn =< link_to 'Back', categories_path
