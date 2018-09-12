@@ -1,30 +1,16 @@
 p#notice = notice
 
   = content_for :title, @post.name
-  #menu
-   - Category.roots.each do |post|
-    li = link_to post.name, post, class: ("active" if @post.root == page)
-   end
-
-
-#submenu
-  /= render 'submenu_categories', posts: Category.post.root.descendants.arrange
-
-  /= f.collection_select :parent_id, Category.order(:name), :id, :name, include_blank: true
-
-
-#breadcrumbs
-  - @post.ancestors.each do |post| 
-    = link_to post.name, post
-  end
-
-
+  
 .jumbotron
+	/#breadcrumbs
+	  /- @post.ancestors.each do |post| 
+	   / = link_to post.name, post
+	  /end
 	span.tags
-	  == render @post.tags 
-	span.tags
-	  = @post
-	
+	  - @post.categories.each do |category|
+      	span.tags = link_to category.name, category
+	  end
 
 	.single_post_title
 	  strong 

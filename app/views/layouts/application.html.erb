@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Universe of your notes</title>
+    <title><%= @name_of_app %></title>
     <%= csrf_meta_tags %>
     <!-- the FIRST of all we need to add the links for our tag cloud -->
 <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
@@ -16,38 +16,37 @@
   	-->
 
 
-  	<nav class="navbar navbar-inverse">
+  	<nav class="navbar">
 	  <div class="container">
 	    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">
-		      <%= link_to 'The Universe of Your notes', root_path, class: 'navbar-brand' %>
+		      <%= link_to @name_of_app, root_path, class: 'navbar-brand' %>
 		    </div>
-         <h4 class="glyphicon glyphicon-heart-empty
-"></h4><h3 class='credo'>Every your note is in safe place. It is in the sky, on the cloud</h3>
+         <h3 class='credo'><%= @credo %></h3>
 
-        <ul class='nav navbar-nav navbar-right'>
+        <ul class='nav navbar-nav navbar-left'>
  <!-- <button does not WORK for logged in users! 16 36 added destroy session 16 40 added helper user_signed_in? + 16 44 added 
 )) -->
-          <% if !user_signed_in? %>
-          <li>
-           <%= link_to "Sign up", new_user_registration_path %>  
-          </li>
-          <li>
-           <%= link_to "Sign in", new_user_session_path %>  
-          </li>
-
-          <% else %>
-          <li>
-           <%= link_to "All Categories", categories_path %>  
-          </li>
-          <li>
-           <%= link_to "Edit user", edit_user_registration_path %>  
-          </li>
-          <li>
-           <%= link_to "Sign out", destroy_user_session_path, method:  :delete %>  
-          </li>
-          <% end %>
-
+        <% if !user_signed_in? %>
+            <li>
+             <%= link_to "Sign up", new_user_registration_path %>  
+            </li>
+            <li>
+             <%= link_to "Sign in", new_user_session_path %>  
+            </li>
+        <% else %>
+            <li>
+             <%= link_to "All Categories", categories_path %>  
+            </li>
+            <li>
+             <%= link_to "Edit user", edit_user_registration_path %>  
+            </li>
+          </ul>
+          <ul class='nav navbar-nav navbar-right'>
+            <li>
+             <%= link_to "Sign out", destroy_user_session_path, method:  :delete %>  
+            </li>
+        <% end %>
         </ul>
 		</div>
 	</nav>

@@ -4,3 +4,4 @@ class AddAncestryToPost < ActiveRecord::Migration[5.1]
     add_index :posts, :ancestry
   end
 end
+

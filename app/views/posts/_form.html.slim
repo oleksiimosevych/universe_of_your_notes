@@ -6,26 +6,43 @@
         - @post.errors.full_messages.each do |message|
           li = message
 
-  .jumbotron
-    .input-group
+  p#notice = notice
+    = content_for :title, @category.name
+  ul#menu class="list-group"
+    div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"
+      div class="panel panel-primary"
+        div class="panel-heading" role="tab" id="heading1"
+          = hidden_field_tag "post[category_ids][]", nil
+            / .categories_div
+          = f.label "Categories:", class: 'input'
+          br
+          - Category.all.each do |category|
+            / span.categories_in_span
+            
+            /   nobr
+            /   = label_tag dom_id(category), category.name, class: 'categories_after_checkboxes'
+            h4 class="panel-title"
+              a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1" 
+              ul.link_to_category 
+                = check_box_tag "post[category_ids][]", category.id, @post.category_ids.include?(category.id), id: dom_id(category)
+                = link_to category.name, category
+          end
+  .jumbotron#box
+      /=f.collection_check_boxes :post, :category_ids, @categories, :id, :name 
 
-      = f.label "Categories:", class: 'input'
-      br
-      = f.collection_select :parent_id, Category.order(:name), :id, :name, include_blank: true
+      
+      /= f.association :categories, as: :select, include_blank: true
 
       /= f.text_field :tag_list, value: f.object.tag_list.to_s,  class: 'inputtitle'
-      <br>
-      = f.label "Tags:", class: 'input'
+      / br
+      / br
+      / = f.label "Tags:", class: 'input'
+      / br
+      / = f.text_field :tag_list, value: f.object.tag_list.to_s,  class: 'inputtitle'
+      / <br>
+      / = f.label :title, class: 'titles'
       br
-      = f.text_field :tag_list, value: f.object.tag_list.to_s,  class: 'inputtitle'
-      <br>
-      = f.label :title, class: 'titles'
-      br
-      = f.text_field :title, class: 'inputtitle'
-    .input-group
-      /= f.label :content, class: 'titles'
-      /br
-      = f.text_area :content, class: 'textarea', placeholder: 'Add description (required)'
-      /just deleted ids
-
+      = f.text_field :title, class: 'inputtitle', placeholder: 'Title (required)'
+      .input-group
+        = f.text_area :content, class: 'textarea', placeholder: 'Drag files here or start typing, than anter Create Post button and your note will be saved'
   .actions = f.submit class: "btn"

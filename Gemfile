@@ -4,8 +4,14 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+# gem 'trix'
+gem 'devise-i18n'
+gem 'devise-bootstrap-views', '~> 1.0'
+
 #tags 20 08 18
 gem 'acts-as-taggable-on'
+
+gem 'pry-rails', group: [:development, :test]
 
 gem 'awesome_nested_set'
 

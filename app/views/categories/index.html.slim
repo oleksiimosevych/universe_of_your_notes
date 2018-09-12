@@ -1,9 +1,14 @@
-h1 Listing categories
+h1 Categories cloud
+div#tagcloud
+        ul = render @categories
+
+
 
 table.jumbotron
   thead
     tr
       th Name
+      th Posts
       th Content
       th Ancestry
       th
@@ -14,6 +19,7 @@ table.jumbotron
     - @categories.each do |category|
       tr
         td = category.name
+        td = category.posts.map {|p| p.title}.join(', ')
         td = category.content
         td = category.ancestry
         td = link_to ' Show|', category
@@ -22,9 +28,14 @@ table.jumbotron
 
   br
 
-  = link_to 'New Category', new_category_path
+  = link_to 'New Category', new_category_path, class: 'btn'
 
 
+        
+javascript:
+    jQuery(document).ready(function(){
+        $('#tagcloud').tagoSphere(settings);
+    });
 
   javascript:
     jQuery(document).ready(function(){
