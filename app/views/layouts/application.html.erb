@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Universe of your notes</title>
+    <title><%= @name_of_app %></title>
     <%= csrf_meta_tags %>
     <!-- the FIRST of all we need to add the links for our tag cloud -->
 <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
@@ -16,11 +16,11 @@
   	-->
 
 
-  	<nav class="navbar navbar-inverse">
+  	<nav class="navbar">
 	  <div class="container">
 	    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-header">
-		      <%= link_to @app_name, root_path, class: 'navbar-brand' %>
+		      <%= link_to @name_of_app, root_path, class: 'navbar-brand' %>
 		    </div>
          <h3 class='credo'><%= @credo %></h3>
 

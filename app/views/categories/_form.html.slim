@@ -15,4 +15,4 @@
   .field
     /= f.label :parent_id, class: 'input'
     = f.collection_select :parent_id, Category.order(:name), :id, :name, include_blank: true
-  .actions = f.submit
+  .actions.btn = f.submit

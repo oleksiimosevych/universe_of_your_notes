@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :names
   def names
     @credo = "YOUR UNIVERSE. YOUR NOTES. on the cloud"
-    @app_name = 'The Universe of Your notes'
+    @name_of_app = "The Universe of Your notes"
 
   end
 

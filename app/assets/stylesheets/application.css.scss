@@ -20,11 +20,95 @@
  @import "font-awesome";
  */
 
+/*VARIABLES*/
+$main-color: darkred;
+
+
+/*table*/
+/*body*/
+/*input*/
+/*navbars*/
+/*h1 2 3 4 5 6 */
+h6{
+    color: wheat !important;
+}
+td{color: white;}
+table.jumbotron, .jumbotron{
+    padding: 5px !important;
+    opacity: 0.7 !important;
+    background-color: $main-color !important;
+}
+
+.inputtitle, .textarea, #category_parent_id {
+    opacity: 0.7 !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    width: 100%;
+
+}
+
+p{
+    color: white !important;
+}
+.btn{
+    background-color: $main-color !important;
+    opacity: 0.5 !important;
+    color: white !important;
+}
+
+h4, a:visited{
+    color: white !important;
+}
+
+.navbar{
+    background-color: $main-color;
+    opacity: 0.7;
+    color: white !important;
+}
+
+img {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+#heading1{
+    background-color: $main-color;
+    opacity: 0.7;
+    /*background-image: image-url('universe.jpg');*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.jumbotron_posts_show, .jumbotron{
+    opacity: 0.7;
+}
+#editpost, h1,h2{
+    color: white !important;
+}
+.panel-primary, .panel{
+    background-image: image-url('universe.jpg');
+}
+body { 
+  background-image: image-url('universe.jpg');
+  height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
 #accordion{
   width: 30%;
+
 }
 
 #box{
+
+  background-color: $main-color;
+  opacity: 0.7;
   float:right;
   padding: 5px;
   margin: 5px;
@@ -56,7 +140,8 @@
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-    background-color: #33b5e5 !important;
+    background-color: darkgray !important;
+    opacity: 0.7;
     color: #fff!important;
     text-decoration: none;
     float: left;
@@ -72,9 +157,6 @@
     padding-left: 0; /* distance left in Firefox, Safari, Chrome */
    }
 
-#all_posts_with_tag, #all_posts_with_tag > div > div.froala-editor > p{
-    
-}
 
 /*for not registred*/
 .not-authorized{
@@ -104,6 +186,7 @@
 }
 
 .tags a, h1 > .tags{
+
 	border-radius: 20px;
     margin: 5px;
 	display: inline-block;
@@ -114,8 +197,7 @@
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-    background-color: #33b5e5 !important;
-    color: #fff!important;
+    color: #fff !important;
     text-decoration: none;
 }
 
