@@ -22,7 +22,8 @@
     h4 Posts in category:
     - @category.posts.each do |post|
       h2 = link_to post.title, post
-      br 
+      br
+      = link_to post.content, post 
     end
     br
     p Description:

@@ -22,25 +22,35 @@
 
 /*VARIABLES*/
 $main-color: darkred;
+$opacity: 0.7;
+$wheat: wheat !important;
+$realBlack: black !important;
 
 
-/*table*/
 /*body*/
-/*input*/
-/*navbars*/
 /*h1 2 3 4 5 6 */
 h6{
     color: wheat !important;
 }
-td{color: white;}
-table.jumbotron, .jumbotron{
-    padding: 5px !important;
-    opacity: 0.7 !important;
-    background-color: $main-color !important;
+/*input / label / text */
+label{
+    color:white;
+}
+.text-muted {
+    color: $wheat;
+}
+/*links*/
+a.list-item, a.list-item:visited{
+    color: $realBlack;
 }
 
+/*navbars*/
+
+
+
+
 .inputtitle, .textarea, #category_parent_id {
-    opacity: 0.7 !important;
+    opacity: $opacity !important;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -64,7 +74,7 @@ h4, a:visited{
 
 .navbar{
     background-color: $main-color;
-    opacity: 0.7;
+    opacity: $opacity;
     color: white !important;
 }
 
@@ -75,7 +85,7 @@ img {
 
 #heading1{
     background-color: $main-color;
-    opacity: 0.7;
+    opacity: $opacity;
     /*background-image: image-url('universe.jpg');*/
     background-position: center;
     background-repeat: no-repeat;
@@ -83,7 +93,7 @@ img {
 
 }
 .jumbotron_posts_show, .jumbotron{
-    opacity: 0.7;
+    opacity: $opacity;
 }
 #editpost, h1,h2{
     color: white !important;
@@ -108,14 +118,20 @@ body {
 #box{
 
   background-color: $main-color;
-  opacity: 0.7;
+  opacity: $opacity;
   float:right;
   padding: 5px;
   margin: 5px;
   width: 69%;
 }
 
-
+/*table*/
+td{color: white;}
+table.jumbotron, .jumbotron{
+    padding: 5px !important;
+    opacity: $opacity !important;
+    background-color: $main-color !important;
+}
 
 
 /*span.categories_in_span {
@@ -141,7 +157,7 @@ body {
     white-space: nowrap;
     vertical-align: baseline;
     background-color: darkgray !important;
-    opacity: 0.7;
+    opacity: $opacity;
     color: #fff!important;
     text-decoration: none;
     float: left;
